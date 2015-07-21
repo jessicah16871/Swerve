@@ -1,12 +1,28 @@
 package com.edinarobotics.swerve;
 
+import com.edinarobotics.utils.gamepad.FilteredGamepad;
+import com.edinarobotics.utils.gamepad.GamepadNew;
+import com.edinarobotics.utils.gamepad.gamepadfilters.DeadzoneFilter;
+import com.edinarobotics.utils.gamepad.gamepadfilters.GamepadFilter;
+import com.edinarobotics.utils.gamepad.gamepadfilters.GamepadFilterSet;
+import com.edinarobotics.utils.gamepad.gamepadfilters.PowerFilter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Controls {
 
     private static Controls instance;
 
+    public final GamepadNew gamepad;
+
     private Controls(){
 
-        //TODO: Controls
+        List<GamepadFilter> gamepadFilters = new ArrayList<GamepadFilter>();
+        gamepadFilters.add(new DeadzoneFilter(0.1));
+        gamepadFilters.add(new PowerFilter(1));
+        GamepadFilterSet driveGamepadFilterSet = new GamepadFilterSet(gamepadFilters);
+        gamepad = new FilteredGamepad(0, driveGamepadFilterSet);
 
     }
 

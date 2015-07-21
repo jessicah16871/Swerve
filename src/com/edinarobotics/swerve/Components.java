@@ -1,8 +1,12 @@
 package com.edinarobotics.swerve;
 
+import edu.wpi.first.wpilibj.Gyro;
+
 public class Components {
 
     private static Components instance;
+
+    public Gyro gyro;
 
     private Components(){
 
