@@ -28,6 +28,11 @@ public class Drivetrain extends Subsystem1816 {
         this.topRightDrive.changeControlMode(CANTalon.ControlMode.PercentVbus);
         this.bottomLeftDrive.changeControlMode(CANTalon.ControlMode.PercentVbus);
         this.bottomRightDrive.changeControlMode(CANTalon.ControlMode.PercentVbus);
+        
+        this.topLeftSteer.changeControlMode(CANTalon.ControlMode.Position);
+        this.topRightSteer.changeControlMode(CANTalon.ControlMode.Position);
+        this.bottomLeftSteer.changeControlMode(CANTalon.ControlMode.Position);
+        this.bottomRightSteer.changeControlMode(CANTalon.ControlMode.Position);
 
         swerveDrive = new SwerveDrive();
 
