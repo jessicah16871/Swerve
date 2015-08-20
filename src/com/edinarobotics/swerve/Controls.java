@@ -24,6 +24,8 @@ public class Controls {
         GamepadFilterSet driveGamepadFilterSet = new GamepadFilterSet(gamepadFilters);
         gamepad = new FilteredGamepad(0, driveGamepadFilterSet);
 
+        //Add buttons in the future if necessary
+
     }
 
     /**
